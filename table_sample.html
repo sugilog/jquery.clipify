@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script type="text/javascript" src="jquery.clipify.js"></script>
+</head>
+<body>
+  <span class="clipify_target" data-clipify="clipboard">
+    click to copy
+  </span>
+
+  <table>
+    <tr>
+      <th>&nbsp;</th>
+      <th>name</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <td class="clipify_target">copy</td>
+      <td>Andy</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td class="clipify_target">copy</td>
+      <td>Bob</td>
+      <td>21</td>
+    </tr>
+  </table>
+
+  <div id="clipify_container">
+  </div>
+
+  <script type="text/javascript">
+  <!--
+jQuery("#clipify_container").clipify({mode: "debug"});
+
+jQuery.clipify.setCopyText = function(target){
+  var tds = target.closest("tr").find("td");
+  return tds.eq(1).text() + " (" + tds.eq(2).text() + ")";
+};
+  -->
+  </script>
+</body>
+</html>
+
