@@ -1,3 +1,10 @@
+/*!
+ * jquery.clipify v0.0.1
+ *
+ * Copyright (c) 2012 Takayuki Sugita, http://github.com/sugilog
+ * Released under the MIT License
+*/
+
 package
 {
   import flash.display.Sprite;
