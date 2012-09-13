@@ -15,6 +15,12 @@ jQuery.clipify = {};
     return target.data().clipify || target.text().trim();
   };
 
+  // define callback on mouseover clipify target, after setCopyText
+  jQuery.clipify.onMouseover = function(target){
+    console.log("mouseover");
+    console.log(target);
+  };
+
   // define callback after set clipboard.
   jQuery.clipify.afterClick = function(_copiedText){
     alert("copied: " + _copiedText);
@@ -70,6 +76,8 @@ jQuery.clipify = {};
 
       jQuery(_this).css({position: "absolute"}).css(target.position());
       jQuery(_swf()).css({width: target.width(), height: target.height()});
-    })
+
+      jQuery.clipify.onMouseover(target);
+    });
   };
 })(jQuery);
