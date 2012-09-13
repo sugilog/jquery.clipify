@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script type="text/javascript" src="./javascript/jquery.clipify.js"></script>
+</head>
+<body>
+  <div class="clipify_area">
+    <textarea>hoge
+fuga
+piyo
+peso</textarea>
+
+    <br />
+    <br />
+
+    <span class="clipify_target">
+      click to copy
+    </span>
+
+    <br />
+    <br />
+
+    <br />
+    <br />
+
+    <textarea id="pasteboard"></textarea>
+
+  </div>
+
+  <div id="clipify_container">
+  </div>
+
+  <script type="text/javascript">
+  <!--
+jQuery("#clipify_container").clipify({ mode: "debug", url: "./flash/Clipify.swf" });
+jQuery.clipify.setCopyText = function(target) {
+  return jQuery(target).closest("div.clipify_area").find("textarea").val();
+};
+jQuery.clipify.afterClick = function(copiedText) {
+  jQuery("textarea#pasteboard").val(copiedText);
+};
+  -->
+  </script>
+</body>
+</html>
+

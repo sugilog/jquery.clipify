@@ -55,7 +55,7 @@ package
 
     private function afterClick():void
     {
-      ExternalInterface.call("(function(){ jQuery.clipify.afterClick('" + _copyText + "'); })");
+      ExternalInterface.call("(function(){ jQuery.clipify.afterClick('" + _copyText.replace(/\r\n|\r|\n/g, "\\n") + "'); })");
       _logger("afterClick");
     }
 
