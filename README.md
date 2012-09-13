@@ -44,6 +44,12 @@ Callback functions
     <br />
     default setting is `alert("copied: " + copiedText);`.
   </dd>
+  <dt>[Void] `$.clipify.onMouseOver(targetElement)`</dt>
+  <dd>
+    !!EXPERIMENTAL!!
+    <br />
+    onMouseOver call on mouseover event, after setCopyText called
+  </dd>`
 </dl>
 
 
