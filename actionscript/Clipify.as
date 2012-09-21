@@ -42,20 +42,20 @@ package
 
     private function onMouseOver(text:String):void
     {
-      _copyText = text;
-      _logger("set copytext: " + _copyText);
+      this._copyText = text;
+      _logger("set copytext: " + this._copyText);
     }
 
     private function onClick(event:MouseEvent):void
     {
-      System.setClipboard(_copyText);
-      _logger("set clipboard: " + _copyText);
+      System.setClipboard(this._copyText);
+      _logger("set clipboard: " + this._copyText);
       afterClick();
     }
 
     private function afterClick():void
     {
-      ExternalInterface.call("(function(){ jQuery.clipify.afterClick('" + _copyText.replace(/\r\n|\r|\n/g, "\\n") + "'); })");
+      ExternalInterface.call("(function(){ jQuery.clipify.afterClick('" + this._copyText.replace(/\r\n|\r|\n/g, "\\n") + "'); })");
       _logger("afterClick");
     }
 
@@ -66,13 +66,13 @@ package
 
       if (mode == "debug")
       {
-        _debug = true;
+        this._debug = true;
       }
     }
 
     private function _logger(msg:String):void
     {
-      if (_debug)
+      if (this._debug)
       {
         ExternalInterface.call("console.log", msg);
       }
